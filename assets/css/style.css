@@ -271,8 +271,9 @@ p { margin: 0 0 1em; }
 .timeline li:last-child { padding-bottom: 0; }
 .timeline li::before {
   content: ""; position: absolute; left: -28px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
-  background: var(--bg-alt); border: 2px solid var(--accent);
+  background: var(--bg); border: 2px solid var(--accent);
 }
+.section-alt .timeline li::before { background: var(--bg-alt); }
 .timeline .when { color: var(--accent); font-size: 13px; margin-bottom: 4px; }
 .timeline h3 { font-size: 1.15rem; margin-bottom: 2px; }
 .timeline .org { color: var(--muted); font-weight: 500; margin-bottom: 8px; }
