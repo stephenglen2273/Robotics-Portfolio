@@ -5,8 +5,8 @@
 
 window.PORTFOLIO = {
   profile: {
-    name: "Your Name",
-    tagline: "Robotics Engineer",
+    name: "Stephen Glen",
+    tagline: "Mechanical Engineering PhD Student",
     headline: "I build robots that sense, think and move.",
     intro: "Autonomous systems, embedded control and perception — from CAD to firmware to field testing.",
     // Paragraphs for the About section.
@@ -16,18 +16,17 @@ window.PORTFOLIO = {
       "Replace this text with your own story: what got you into robotics, what you're focused on now, and what you want to build next."
     ],
     // Optional: path to a photo, e.g. "assets/img/me.jpg". Leave "" for initials avatar.
-    photo: "",
+    photo: "assets/img/Me.jpg",
     facts: [
-      ["Based in", "City, Country"],
+      ["Based in", "San Antonio, TX"],
       ["Focus", "Autonomy · Controls · Embedded"],
       ["Status", "Open to opportunities"]
     ],
-    email: "you@example.com",
+    email: "stephen.glen@my.utsa.edu",
     resume: "", // e.g. "assets/resume.pdf"
     social: [
       { label: "GitHub", icon: "github", url: "https://github.com/stephenglen2273" },
-      { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/" },
-      { label: "YouTube", icon: "youtube", url: "" }
+      { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/" }
     ]
   },
 
