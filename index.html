@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robotics Portfolio</title>
+  <meta name="description" content="Robotics engineering portfolio: autonomous systems, embedded control, perception and mechanical design projects.">
+  <meta property="og:title" content="Robotics Portfolio">
+  <meta property="og:description" content="Robotics engineering portfolio: autonomous systems, embedded control, perception and mechanical design projects.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="brand" href="#top" id="brand">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-robot"/></svg>
+        <span data-field="name">Your Name</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <canvas class="hero-grid" id="hero-grid" aria-hidden="true"></canvas>
+      <div class="container hero-inner">
+        <p class="eyebrow mono" data-field="tagline">Robotics Engineer</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent" data-field="name">Your Name</span>.<br>
+          <span data-field="headline">I build robots that sense, think and move.</span>
+        </h1>
+        <p class="hero-sub" data-field="intro">
+          Autonomous systems, embedded control and perception — from CAD to firmware to field testing.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" id="resume-link" href="#" target="_blank" rel="noopener">Résumé</a>
+        </div>
+        <ul class="hero-social" id="hero-social" aria-label="Social links"></ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about-text">
+          <h2 class="section-title"><span class="mono num">01</span> About</h2>
+          <div id="about-body"></div>
+        </div>
+        <aside class="about-card">
+          <div class="avatar" id="avatar" aria-hidden="true"></div>
+          <dl class="facts" id="facts"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title"><span class="mono num">02</span> Projects</h2>
+        <div class="filters" id="filters" role="toolbar" aria-label="Filter projects"></div>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title"><span class="mono num">03</span> Skills</h2>
+        <div class="skill-grid" id="skill-grid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <h2 class="section-title"><span class="mono num">04</span> Experience &amp; Education</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact">
+        <h2 class="section-title"><span class="mono num">05</span> Contact</h2>
+        <p class="contact-lead">Open to robotics roles, research collaborations and interesting builds.</p>
+        <a class="btn btn-primary btn-lg" id="email-link" href="#">Say hello</a>
+        <ul class="hero-social center" id="contact-social" aria-label="Social links"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span data-field="name">Your Name</span>. Built with plain HTML, CSS &amp; JS · Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- Project detail dialog -->
+  <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+    <div id="modal-body"></div>
+  </dialog>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-robot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="14" r="1.6" fill="currentColor"/><circle cx="15" cy="14" r="1.6" fill="currentColor"/><path d="M12 8V4M10 4h4M2 13v3M22 13v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.3 18.3 4.6 18.3 4.6c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m2 6 10 7 10-7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></symbol>
+  </svg>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
