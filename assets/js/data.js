@@ -115,8 +115,18 @@ window.PORTFOLIO = {
     { group: "Simulation", items: ["Gazebo", "Isaac Sim", "URDF / Xacro", "MoveIt"] }
   ],
 
-  /* ---------- Experience & education (newest first) ---------- */
-  timeline: [
+  /* ---------- Education (newest first) ---------- */
+  education: [
+    {
+      when: "2019 — 2023",
+      title: "B.S. Mechanical / Electrical / Robotics Engineering",
+      org: "University Name",
+      text: "Relevant coursework, robotics club, competitions."
+    }
+  ],
+
+  /* ---------- Experience (newest first) ---------- */
+  experience: [
     {
       when: "2024 — Present",
       title: "Robotics Engineer",
@@ -128,12 +138,6 @@ window.PORTFOLIO = {
       title: "Robotics Intern",
       org: "Company or Lab",
       text: "Short description of the internship."
-    },
-    {
-      when: "2019 — 2023",
-      title: "B.S. Mechanical / Electrical / Robotics Engineering",
-      org: "University Name",
-      text: "Relevant coursework, robotics club, competitions."
     }
   ]
 };

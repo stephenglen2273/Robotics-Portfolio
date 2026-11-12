@@ -13,7 +13,8 @@ All content lives in **`assets/js/data.js`**:
 | Name, intro, about, contact, social links | `profile` |
 | Project cards + pop-up details | `projects` |
 | Skills     | `skills`             |
-| Experience / education | `timeline` |
+| Education | `education` |
+| Work experience | `experience` |
 
 ### Adding a project
 

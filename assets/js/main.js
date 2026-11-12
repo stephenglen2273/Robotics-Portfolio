@@ -236,16 +236,19 @@
     skillGrid.appendChild(el("div", { class: "skill-card reveal" }, [el("h3", { class: "mono", text: g.group }), ul]));
   });
 
-  /* ---------- Timeline ---------- */
-  var timeline = $("#timeline");
-  (data.timeline || []).forEach(function (t) {
-    timeline.appendChild(el("li", { class: "reveal" }, [
-      el("div", { class: "when mono", text: t.when }),
-      el("h3", { text: t.title }),
-      el("div", { class: "org", text: t.org || "" }),
-      t.text ? el("p", { text: t.text }) : null
-    ]));
-  });
+  /* ---------- Education & experience timelines ---------- */
+  function renderTimeline(container, items) {
+    (items || []).forEach(function (t) {
+      container.appendChild(el("li", { class: "reveal" }, [
+        el("div", { class: "when mono", text: t.when }),
+        el("h3", { text: t.title }),
+        el("div", { class: "org", text: t.org || "" }),
+        t.text ? el("p", { text: t.text }) : null
+      ]));
+    });
+  }
+  renderTimeline($("#education-list"), data.education);
+  renderTimeline($("#experience-list"), data.experience || data.timeline);
 
   /* ---------- Reveal on scroll ---------- */
   var io = "IntersectionObserver" in window
